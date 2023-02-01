@@ -1,0 +1,73 @@
+{
+  "title": "invalid fail",
+  "input": {
+    "WHERE": {
+      "OR": [
+        {
+          "OR": [
+            {
+              "GT": {
+                "courses_avg": 120
+              }
+            },
+            {
+              "IS": {
+                "courses_dept": "adhejhjgh"
+              }
+            },
+            {
+              "IS": {
+                "courses_id": "gfgskh"
+              }
+            },
+            {
+              "IS": {
+                "courses_instructor": "jj"
+              }
+            },
+            {
+              "IS": {
+                "courses_title": "kk"
+              }
+            },
+            {
+              "EQ": {
+                "courses_pass": 2000
+              }
+            },
+            {
+              "EQ": {
+                "courses_fai": 4000
+              }
+            },
+            {
+              "EQ": {
+                "courses_audit": 4000
+              }
+            },
+            {
+              "IS": {
+                "courses_uuid": "sdfghjkkhgfd"
+              }
+            },
+            {
+              "EQ": {
+                "courses_year": 55
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_id",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected": true,
+  "expected": "InsightError"
+}

@@ -1,0 +1,30 @@
+{
+	"title": "SELECT id, title, avg WHERE title = 'intro*'",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"courses_title": "intro*"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_id",
+				"courses_title",
+				"courses_avg"
+			],
+			"ORDER": "courses_id"
+		}
+	},
+	"expected": [
+		{
+			"courses_id": "304",
+			"courses_title": "intro to relational databases",
+			"courses_avg": 75
+    	},
+		{
+			"courses_id": "310",
+			"courses_title": "intro to software eng",
+			"courses_avg": 85
+		}
+	]
+}

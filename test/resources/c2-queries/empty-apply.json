@@ -1,0 +1,42 @@
+{
+	"title": "",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "cpsc"
+					}
+				},
+				{
+					"GT": {
+						"courses_avg": 90
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_title"
+			]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_title"
+			],
+			"APPLY": []
+		}
+	},
+	"expected": [
+		{"courses_title":"alg in bioin"},
+		{"courses_title":"honours thesis"},
+		{"courses_title":"student seminar"},
+		{"courses_title":"thry of automata"},
+		{"courses_title":"computl ling 1"},
+		{"courses_title":"software eng"},
+		{"courses_title":"artif intell 2"},
+		{"courses_title":"comp comm protcl"},
+		{"courses_title":"machine learn i"},
+		{"courses_title":"m.sc major essay"}
+	]
+}

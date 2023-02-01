@@ -1,0 +1,30 @@
+{
+	"title": "SELECT dept, avg WHERE !(avg < 92) && dept == 'adhe' ORDER BY avg",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"NOT": {
+						"LT": {
+							"courses_avg": 92
+						}
+					}
+				},
+				{
+					"IS": {
+						"courses_dept": "adhe"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_avg"
+			],
+			"ORDER": "courses_avg"
+		}
+	},
+	"errorExpected": false,
+	"expected": []
+}

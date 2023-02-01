@@ -1,0 +1,66 @@
+{
+	"title": "SELECT id, avg WHERE avg > 91 && dept == 'adhe' ORDER BY id, avg DESC",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"GT": {
+						"courses_avg": 85
+					}
+				},
+				{
+					"IS": {
+						"courses_id": "100"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_fail",
+				"courses_dept"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"courses_fail",
+					"courses_dept"
+				]
+			}
+		}
+	},
+	"expected": [
+		{"courses_fail":8,"courses_dept":"germ"},
+		{"courses_fail":1,"courses_dept":"japn"},
+		{"courses_fail":1,"courses_dept":"germ"},
+		{"courses_fail":1,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"sans"},
+		{"courses_fail":0,"courses_dept":"sans"},
+		{"courses_fail":0,"courses_dept":"pers"},
+		{"courses_fail":0,"courses_dept":"pers"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"germ"},
+		{"courses_fail":0,"courses_dept":"dani"},
+		{"courses_fail":0,"courses_dept":"dani"},
+		{"courses_fail":0,"courses_dept":"dani"},
+		{"courses_fail":0,"courses_dept":"dani"},
+		{"courses_fail":0,"courses_dept":"dani"},
+		{"courses_fail":0,"courses_dept":"dani"},
+		{"courses_fail":0,"courses_dept":"dani"},
+		{"courses_fail":0,"courses_dept":"dani"}
+	]
+}

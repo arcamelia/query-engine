@@ -1,0 +1,80 @@
+{
+	"title": "",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "cpsc"
+					}
+				},
+				{
+					"GT": {
+						"courses_avg": 93
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_title",
+				"courses_instructor",
+				"minAvg"
+			]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_title", "courses_instructor"
+			],
+			"APPLY": [
+				{
+					"minAvg": {
+						"MIN": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"expected": [
+		{
+			"courses_title":"honours thesis",
+			"courses_instructor":"tsiknis, georgios",
+			"minAvg":93.38
+		},
+		{
+			"courses_title":"honours thesis",
+			"courses_instructor":"",
+			"minAvg":93.38
+		},
+		{
+			"courses_title":"honours thesis",
+			"courses_instructor":"knorr, edwin max",
+			"minAvg":93.5
+		},
+		{
+			"courses_title":"thry of automata",
+			"courses_instructor":"friedman, joel",
+			"minAvg":94
+		},
+		{
+			"courses_title":"thry of automata",
+			"courses_instructor":"",
+			"minAvg":94
+		},
+		{
+			"courses_title":"computl ling 1",
+			"courses_instructor":"carenini, giuseppe",
+			"minAvg":94.5
+		},
+		{
+			"courses_title":"computl ling 1",
+			"courses_instructor":"",
+			"minAvg":94.5
+		},
+		{
+			"courses_title":"m.sc major essay",
+			"courses_instructor":"",
+			"minAvg":95
+		}
+	]
+}

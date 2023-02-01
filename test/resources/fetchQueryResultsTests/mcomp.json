@@ -1,0 +1,40 @@
+{
+	"title": "SELECT id, title, avg WHERE avg > 80",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"courses_avg": 80
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_id",
+				"courses_title",
+				"courses_avg"
+			],
+			"ORDER": "courses_id"
+		}
+	},
+	"expected": [
+		{
+			"courses_id": "111",
+			"courses_title": "something",
+			"courses_avg": 95
+		},
+		{
+			"courses_id": "221",
+			"courses_title": "something but cpsc",
+			"courses_avg": 92
+		},
+		{
+			"courses_id": "310",
+			"courses_title": "intro to software eng",
+			"courses_avg": 85
+		},
+		{
+			"courses_id": "320",
+			"courses_title": "algo analysis",
+			"courses_avg": 82
+		}
+	]
+}

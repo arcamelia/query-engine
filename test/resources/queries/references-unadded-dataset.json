@@ -1,0 +1,19 @@
+{
+  "title": "should reject w/ InsightError - query references unadded dataset",
+  "input": {
+    "WHERE": {
+      "GT": {
+        "wrongName_avg": 90
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "wrongName_dept",
+        "wrongName_avg"
+      ],
+      "ORDER": "wrongName_avg"
+    }
+  },
+  "errorExpected": true,
+  "expected": "InsightError"
+}

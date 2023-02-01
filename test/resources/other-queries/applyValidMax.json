@@ -1,0 +1,30 @@
+{
+	"title": "APPLY valid MAX",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"courses_title": "cp*"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_title",
+				"overallAvg"
+			]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_title"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"MAX": "courses_pass"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [{"courses_title":"cptl budgeting","overallAvg":74},{"courses_title":"cptl mrkts&rl es","overallAvg":146},{"courses_title":"cpt aid ms pr as","overallAvg":51}]
+}

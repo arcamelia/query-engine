@@ -1,0 +1,48 @@
+{
+	"title": "SELECT id, title, avg WHERE avg < 60 || avg > 90 && department == 'cpsc' ORDER BY avg",
+	"input": {
+		"WHERE": {
+			"OR": [
+				{
+					"AND": [
+						{
+							"GT": {
+								"courses_avg": 90
+							}
+						},
+						{
+							"IS": {
+								"courses_dept": "cpsc"
+							}
+						}
+					]
+				},
+				{
+					"LT": {
+						"courses_avg": 60
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_id",
+				"courses_title",
+				"courses_avg"
+			],
+			"ORDER": "courses_avg"
+		}
+	},
+	"expected": [
+		{
+			"courses_id": "222",
+			"courses_title": "something else",
+			"courses_avg": 55
+		},
+		{
+			"courses_id": "221",
+			"courses_title": "something but cpsc",
+			"courses_avg": 92
+		}
+	]
+}

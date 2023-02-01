@@ -1,0 +1,15 @@
+{
+	"title": "SELECT dept, avg ORDER BY avg",
+	"input": {
+		"WHERE": {},
+		"OPTIONS": {
+			"COLUMNS": [
+				"small_dept",
+				"small_avg"
+			],
+			"ORDER": "small_avg"
+		}
+	},
+	"errorExpected": false,
+	"expected": []
+}

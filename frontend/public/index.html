@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<title>310 Frontend</title>
+	<link href="./style.css" rel="stylesheet" />
+	<link href="./table.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+<h1>GROUP 594 DEMO FOR CPSC 310!</h1>
+<div class="row">
+	<div class="column">
+		<p><b>For a given course, see the professors who taught it previously with their respective
+			averages and average fails.</b></p>
+		<form onsubmit="return getProfessors()">
+			<label for="depName">Department Name:</label>
+			<input type="text" id="depName"><br><br>
+			<label for="courseNum">Course number:</label>
+			<input type="text" id="courseNum"><br><br>
+			<input type="submit" value="Get Results">
+		</form>
+	</div>
+	<div class="column">
+		<table class="tg" id="profTable">
+			<thead>
+			<tr>
+				<th class="tg-5w0y"><span style="color:#FFF">Prof</span></th>
+				<th class="tg-0pky">Avg Grade</th>
+				<th class="tg-0pky">Avg Fails</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td class="tg-glna"></td>
+				<td class="tg-glna"></td>
+				<td class="tg-glna"></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</br></br></br>
+<div class="row">
+	<div class="column">
+		<p><b>Select your residence and type in a building code to see distance between them.</b></p>
+		<form>
+			<label for="residence">Choose your residence at UBC:</label>
+			<select name="residence" id="residence">
+				<option value="orchard">Orchard Commons</option>
+				<option value="totem">Totem Park</option>
+				<option value="vanier">Place Vanier</option>
+			</select>
+			</br></br>
+			<label for="buildingName">Building:</label>
+			<input type="text" id="buildingName" name="buildingName"><br><br>
+			<input type="submit" value="Get Results" onclick="doesBuildingExist()">
+		</form>
+	</div>
+	<div class="column">
+		<p id="building-result">Time it takes to get from your residence to the building you selected:</p>
+	</div>
+</div>
+
+<script type="text/javascript" src="./frontend.js"></script>
+</body>
+</html>

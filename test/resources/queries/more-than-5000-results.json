@@ -1,0 +1,19 @@
+{
+  "title": "should reject w/ ResultTooLargeError - query returns more than 5000 results",
+  "input": {
+    "WHERE": {
+      "GT": {
+        "courses_avg": 88.6
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected": true,
+  "expected": "ResultTooLargeError"
+}

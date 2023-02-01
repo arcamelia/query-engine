@@ -1,0 +1,30 @@
+{
+	"title": "APPLY valid AVG",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"courses_title": "cp*"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_title",
+				"overallAvg"
+			]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_title"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"AVG": "courses_pass"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [{"courses_title":"cptl budgeting","overallAvg":35.71},{"courses_title":"cptl mrkts&rl es","overallAvg":62.73},{"courses_title":"cpt aid ms pr as","overallAvg":19.79}]
+}

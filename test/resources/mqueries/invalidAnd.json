@@ -1,0 +1,43 @@
+{
+  "title": "invalid and ",
+  "input": {
+    "WHERE": {
+      "AN": [
+        {
+          "OR": [
+            {
+              "GT": {
+                "courses_avg": 100
+              }
+            },
+            {
+              "IS": {
+                "courses_dept": "adhe*fbn"
+              }
+            },
+            {
+              "EQ": {
+                "courses_avg": 110
+              }
+            },
+            {
+              "LT": {
+                "courses_avg": -1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_id",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected": true,
+  "expected": "InsightError"
+}

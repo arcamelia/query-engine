@@ -1,0 +1,79 @@
+{
+	"title": "",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "cpsc"
+					}
+				},
+				{
+					"GT": {
+						"courses_avg": 90
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_title",
+				"maxAvg"
+			]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_title"
+			],
+			"APPLY": [
+				{
+					"maxAvg": {
+						"MAX": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"expected": [
+		{
+			"courses_title":"alg in bioin",
+			"maxAvg":91.25
+		},
+		{
+			"courses_title":"honours thesis",
+			"maxAvg":93.5
+		},
+		{
+			"courses_title":"student seminar",
+			"maxAvg":92.4
+		},
+		{
+			"courses_title":"thry of automata",
+			"maxAvg":94
+		},
+		{
+			"courses_title":"computl ling 1",
+			"maxAvg":94.5
+		},
+		{
+			"courses_title":"software eng",
+			"maxAvg":91.79
+		},
+		{
+			"courses_title":"artif intell 2",
+			"maxAvg":90.71
+		},
+		{
+			"courses_title":"comp comm protcl",
+			"maxAvg":91.22
+		},
+		{
+			"courses_title":"machine learn i",
+			"maxAvg":91.22
+		},
+		{
+			"courses_title":"m.sc major essay",
+			"maxAvg":95
+		}
+	]
+}

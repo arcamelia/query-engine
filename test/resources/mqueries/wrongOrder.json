@@ -1,0 +1,18 @@
+{
+  "title": "valid query",
+  "input": {
+    "WHERE": {
+      "EQ": {
+        "courses_avg": 68.06
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_avg"
+      ],
+      "ORDE": "courses_avg"
+    }
+  },
+  "errorExpected": true,
+  "expected": "InsightError"
+}

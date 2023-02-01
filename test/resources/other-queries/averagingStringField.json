@@ -1,0 +1,21 @@
+{
+	"title": "Cannot average string field - Invalid",
+	"input": {
+		"WHERE": {},
+		"OPTIONS": {
+			"COLUMNS": ["courses_title", "avgDept"]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": ["courses_title"],
+			"APPLY": [
+				{
+					"avgDept": {
+						"AVG": "courses_dept"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

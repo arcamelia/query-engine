@@ -1,0 +1,25 @@
+{
+	"title": "underscore in apply key - invalid",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"courses_avg": 90
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": ["courses_dept", "courses_title"]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": ["courses_dept", "courses_title"],
+			"APPLY": [
+				{
+					"courses_title": {
+						"MAX": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

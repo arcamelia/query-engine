@@ -1,0 +1,16 @@
+{
+  "title": "ORDER has invalid field",
+  "input": {
+    "WHERE": {},
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_id",
+        "courses_avg"
+      ],
+      "ORDER": "invalid_key"
+    }
+  },
+  "errorExpected": true,
+  "expected": "InsightError"
+}

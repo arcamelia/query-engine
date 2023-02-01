@@ -1,0 +1,19 @@
+{
+  "title": "should reject w/ InsightError - dataset key doesn't exist",
+  "input": {
+    "WHERE": {
+      "GT": {
+        "courses_avg": 98
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_favstudent",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected": true,
+  "expected": "InsightError"
+}

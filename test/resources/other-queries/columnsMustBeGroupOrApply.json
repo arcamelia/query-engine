@@ -1,0 +1,25 @@
+{
+	"title": "Columns must be in group or apply - Invalid",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"courses_avg": 50
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": ["courses_dept", "courses_avg"]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": ["courses_dept"],
+			"APPLY": [
+				{
+					"maxAverage": {
+						"MAX": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

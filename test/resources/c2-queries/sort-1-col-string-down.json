@@ -1,0 +1,41 @@
+{
+	"title": "sort by string column in descending order",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"courses_avg": 96.5
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": ["courses_dept", "numProfs"],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": ["courses_dept"]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": ["courses_dept"],
+			"APPLY": [
+				{
+					"numProfs": {
+						"COUNT": "courses_instructor"
+					}
+				}
+			]
+		}
+	},
+	"expected": [
+		{"courses_dept":"spph","numProfs":4},
+		{"courses_dept":"psyc","numProfs":1},
+		{"courses_dept":"nurs","numProfs":5},
+		{"courses_dept":"mine","numProfs":1},
+		{"courses_dept":"math","numProfs":6},
+		{"courses_dept":"epse","numProfs":9},
+		{"courses_dept":"eece","numProfs":2},
+		{"courses_dept":"educ","numProfs":1},
+		{"courses_dept":"crwr","numProfs":3},
+		{"courses_dept":"cnps","numProfs":3},
+		{"courses_dept":"audi","numProfs":2},
+		{"courses_dept":"arst","numProfs":1}
+	]
+}

@@ -1,0 +1,69 @@
+{
+  "title": "should perform query - wildcard string comparison",
+  "input": {
+    "WHERE": {
+      "AND": [
+        {
+          "GT": {
+            "courses_avg": 93
+          }
+        },
+        {
+          "IS": {
+            "courses_dept": "cp*"
+          }
+        }
+      ]
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected": false,
+  "expected": [
+    {
+      "courses_dept":"cpsc",
+      "courses_avg":93.38
+    },
+    {
+      "courses_dept":"cpsc",
+      "courses_avg":93.38
+    },
+    {
+      "courses_dept":"cpsc",
+      "courses_avg":93.5
+    },
+    {
+      "courses_dept":"cpsc",
+      "courses_avg":93.5
+    },
+    {
+      "courses_dept":"cpsc",
+      "courses_avg":94
+    },
+    {
+      "courses_dept":"cpsc",
+      "courses_avg":94
+    },
+    {
+      "courses_dept":"cpsc",
+      "courses_avg":94.5
+    },
+    {
+      "courses_dept":"cpsc",
+      "courses_avg":94.5
+    },
+    {
+      "courses_dept":"cpsc",
+      "courses_avg":95
+    },
+    {
+      "courses_dept":"cpsc",
+      "courses_avg":95
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+	"title": "Cannot have duplicate apply keys - Invalid",
+	"input": {
+		"WHERE": {},
+		"OPTIONS": {
+			"COLUMNS": ["courses_dept", "numberOfCourses"]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": ["courses_dept"],
+			"APPLY": [
+				{
+					"numberOfCourses": {
+						"COUNT": "courses_title"
+					}
+				},
+				{
+					"numberOfCourses": {
+						"AVG": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

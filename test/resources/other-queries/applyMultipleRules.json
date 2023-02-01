@@ -1,0 +1,54 @@
+{
+	"title": "APPLY multiple rules",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"courses_title": "cp*"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_title",
+				"overallAvg",
+				"overallMax",
+				"overallMin",
+				"overallSum",
+				"overallCount"
+			]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_title"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"AVG": "courses_pass"
+					}
+				},
+				{
+					"overallMax": {
+						"MAX": "courses_pass"
+					}
+				},
+				{
+					"overallMin": {
+						"MIN": "courses_pass"
+					}
+				},
+				{
+					"overallSum": {
+						"SUM": "courses_pass"
+					}
+				},
+				{
+					"overallCount": {
+						"COUNT": "courses_pass"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [{"courses_title":"cptl budgeting","overallAvg":35.71,"overallMax":74,"overallMin":19,"overallSum":750,"overallCount":13},{"courses_title":"cptl mrkts&rl es","overallAvg":62.73,"overallMax":146,"overallMin":31,"overallSum":2572,"overallCount":25},{"courses_title":"cpt aid ms pr as","overallAvg":19.79,"overallMax":51,"overallMin":4,"overallSum":574,"overallCount":18}]
+}

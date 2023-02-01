@@ -1,0 +1,19 @@
+{
+  "title": "should reject w/ InsightError - ORDER key not in COLUMN list",
+  "input": {
+    "WHERE": {
+      "GT": {
+        "courses_avg": 90
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg"
+      ],
+      "ORDER": "courses_id"
+    }
+  },
+  "errorExpected": true,
+  "expected": "InsightError"
+}

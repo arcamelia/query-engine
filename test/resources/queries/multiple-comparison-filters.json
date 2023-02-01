@@ -1,0 +1,43 @@
+{
+  "title": "should perform query - multiple comparison filters",
+  "input": {
+    "WHERE": {
+      "AND": [
+        {
+          "NOT": {
+            "LT": {
+              "courses_avg": 92
+            }
+          }
+        },
+        {
+          "IS": {
+            "courses_dept": "adhe"
+          }
+        }
+      ]
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected": false,
+  "expected": [
+    {
+      "courses_dept":"adhe",
+      "courses_avg":92.54
+    },
+    {
+      "courses_dept":"adhe",
+      "courses_avg":93.33
+    },
+    {
+      "courses_dept":"adhe",
+      "courses_avg":96.11
+    }
+  ]
+}

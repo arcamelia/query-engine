@@ -1,0 +1,18 @@
+{
+  "title": "EQ operator used in WHERE",
+  "input": {
+    "WHERE": {
+      "EQ": {
+        "courses_avg": 10
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg"
+      ]
+    }
+  },
+  "errorExpected": false,
+  "expected": []
+}
